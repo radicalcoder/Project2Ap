@@ -1,0 +1,62 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+
+    <center>
+        <h2> <center> Welcome To The Cake Ordering Page </center> </h2>
+           
+        <form class="form form-vertical" method="post" action="" novalidate>
+            {{ form.hidden_tag() }}
+            <div style=font-size:20px; font-weight:bold; margin-left:150px;>
+                <center>
+                    <p>
+                        {{ form.base.label }}<br>
+                        {{form.base}}
+                        {% for error in form.base.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                    </p>
+                </center>
+                <p>
+                    {{ form.flavour.label }}<br>
+                    {{ form.flavour }}
+                    {% for error in form.flavour.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p>
+                    {{ form.icing.label }}<br>
+                    {{ form.icing }}
+                    {% for error in form.icing.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p>
+                    {{ form.decorations.label }}<br>
+                    {{ form.decorations }}
+                    {% for error in form.decorations.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p>
+                    {{ form.egg.label }}<br>
+                    {{ form.egg }}
+                    {% for error in form.egg.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p>{{ form.submit() }}</p>
+
+            </div>
+
+
+        </form>
+
+
+
+
+    </center>
+
+
+
+{% endblock %}

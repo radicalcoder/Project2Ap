@@ -1,0 +1,241 @@
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;  
+    
+}
+.dropbtn {
+    background-color: palevioletred;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+    .dropbtn:hover, .dropbtn:focus {
+        background-color: #3e8e41;
+    }
+
+.dropdown {
+    position: center;
+    display: grid;
+}
+
+.dropdown-content {
+    display: none;
+    position: center;
+    background-color: #f9f9f9;
+    min-width: 16px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1
+        }
+
+.show {
+    display: block;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+#section1 {
+    height: 500px;
+    background-color: black;
+}
+
+#section2 {
+    height: 500px;
+    background-color: white;
+}
+
+#section3 {
+    height: 500px;
+    background-color: black;
+}
+
+#section4 {
+    height: 500px;
+    background-color: white;
+}
+
+#section5 {
+    height: 500px;
+    background-color: black;
+}
+
+#section6 {
+    height: 50px;
+    background-color: white;
+}
+ 
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    background-image: url(.jpg);
+}
+
+.title {
+    color: grey;
+    font-size: 18px;
+}
+
+button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+
+
+button:hover, a:hover {
+    opacity: 0.7;
+}
+
+
+.column {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    height: 380px; 
+}
+
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.btn-group button {
+    background-color: #4CAF50; 
+    border: 1px solid green; 
+    color: white; 
+    padding: 10px 125px; 
+    cursor: pointer; 
+    float: left; 
+}
+
+    .btn-group button:not(:last-child) {
+        border-right: none;
+    }
+
+.btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.btn-group button:hover {
+    background-color: #3e8e41;
+}
+
+
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+
+}
+
+input,
+select,
+textarea {
+    max-width: 380px;
+}
+
+
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+/*From w3Schools*/
+.bgimg-1, .bgimg-2, .bgimg-3 {  
+    
+    opacity: 0.80;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.bgimg-1 {
+   background-image: url("destination-1.jpg");
+   min-height: 50vh;
+   min-width: 100vh
+    
+    
+}
+.jumbotron {
+    margin-bottom: 5px;
+}
+.bigBaddy {
+    padding: 13px;
+    margin-bottom: 5px;
+    width: 1550px;
+    height: 550px;
+    font-size: 26px;
+    font-weight: bold;
+    line-height: 2.1428571435;
+    color: darkblue;
+    background-color: #eeeeee;
+}
+.navbar {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 20px;
+}
+#header {
+    transition: 0.5s;
+}
+
+.bgimg-2 {
+    background-image: url("bg_1.jpg");
+    min-height: 50%;
+    
+}
+
+.bgimg-3 {
+    background-image: url("image_1.jpg");
+    min-height: 50%;
+}
