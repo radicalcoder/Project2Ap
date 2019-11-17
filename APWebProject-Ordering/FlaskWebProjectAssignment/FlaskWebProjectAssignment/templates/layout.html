@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - TravelPedia </title>
+    <link rel="stylesheet" type="text/css" href="/static/content/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/content/site.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="/static/scripts/modernizr-2.6.2.js"></script>
+    <script src=" /static/scripts/NavbarAnim.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    
+        <div class="navbar-collapse collapse">
+      
+            <center>
+
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ url_for('home') }}" style=" color: violet">Home</a></li>
+                    <li><a href="{{ url_for('about') }}" style=" color: violet">About</a></li>
+                    {% if current_user.is_anonymous %}
+                    <li><a href="{{ url_for('login') }}" style=" color: violet">Login</a></li>
+                    {% else %}
+                    <li><a href="{{ url_for('user', username=current_user.username) }}" style="color sandybrown">Profile</a></li>
+                    <li><a href="{{ url_for('logout') }}" style=" color: violet">Logout</a></li>
+                    {% endif %}
+
+                    <li><a href="{{ url_for('contact') }}" style=" color: violet">Contact</a></li>
+                </ul>
+            </center>
+        </div>
+
+        
+    
+   
+
+        <hr>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <center>
+            <ul>
+                {% for message in messages %}
+                <center><li>{{ message }}</li></center>
+                {% endfor %}
+            </ul>
+        </center>
+        {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+        <div class="container body-content">
+
+            <hr>
+
+            <footer>
+                <p>&copy; {{ year }} - TravelPedia</p>
+            </footer>
+        </div>
+
+        <script src="/static/scripts/jquery-1.10.2.js"></script>
+        <script src="/static/scripts/bootstrap.js"></script>
+        <script src="/static/scripts/respond.js"></script>
+        {% block scripts %}{% endblock %}
+
+</body>
+</html>

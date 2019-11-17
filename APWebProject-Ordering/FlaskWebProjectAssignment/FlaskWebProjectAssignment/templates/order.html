@@ -1,0 +1,302 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+
+    <center>
+        <h2 style="color:red"> <center> Welcome To Your Travel Planning Page </center> </h2>
+        <div style="background-image: url('static/content/image_1.jpg'); background-size: cover;  ">
+
+
+            <div class="col-xs-6"><div class="count"><span class="plus"></span><span class="minus"></span></div></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-8 col-xs-12">
+                        <div class="tabing">
+                            <ul>
+                                <li><a href="#1" class="active"><span><i class="fa fa-plane" aria-hidden="true"></i></span> Flight</a></li>
+                                <li><a href="#2"><span><i class="fa fa-bed" aria-hidden="true"></i></span> Hotels</a></li>
+
+
+                            </ul>
+                            <div class="tab-content">
+                                <div id="1" class="tab1 active">
+                                    <form>
+                                        <div class="triptype">
+                                            <label class="rndTrip active"><input type="radio" name="Round" value="RoundTrip" checked> Round Trip</label>
+                                            <label class="oneTrip"><input type="radio" name="Round" value="OneWay"> OneWay				</label>
+                                        </div>
+                                        <div class="col-sm-12 col-xs-12 ctrl">
+                                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                            <input id="airport_city" type="text" class="form-control" name="airport_city" value="" placeholder="Enter a city or Airport">
+                                        </div>
+                                        <div class="col-sm-12 col-xs-12 ctrl">
+                                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                            <input id="airport_city_to" type="text" class="form-control" name="airport_city" value="" placeholder="Enter a city or Airport">
+                                        </div>
+                                        <div class="col-sm-6 col-xs-6 ctrl">
+                                            <i class="fa fa-calendar" aria-hidden="true"></i>
+                                            <input id="depart" type="text" class="form-control" name="depart" value="" placeholder="dd-mm-yyyy">
+                                        </div>
+                                        <div class="col-sm-6 col-xs-6 ctrl hide_one-trip">
+                                            <i class="fa fa-calendar" aria-hidden="true"></i>
+                                            <input id="airport_city_Return" type="text" class="form-control" name="Return" value="" placeholder="dd-mm-yyyy">
+                                        </div>
+                                        <div class="select-wrap">
+                                            <div class="adult-box">
+                                                <span>Adult</span>
+                                                <select>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>2</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                </select>
+                                            </div>
+                                            <div class="adult-box">
+                                                <span>Seniors</span>
+                                                <select>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                </select>
+                                            </div>
+                                            <div class="adult-box">
+                                                <span>Children</span>
+                                                <select>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>2</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                </select>
+                                            </div>
+                                            <div class="adult-box pull-right">
+                                                <span>Class</span>
+                                                <select>
+                                                    <option>Coach</option>
+                                                    <option>Business</option>
+                                                    <option>Economy</option>
+                                                    <option>General</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="select-wrap prefered-airline">
+                                            <div class="adult-box">
+
+                                                <select>
+                                                    <option value="All">Airlines</option>
+                                                    <option value="VW">AEROMAR</option>
+                                                    <option value="3H">AIR INUIT</option>
+                                                    <option value="NQ">AIR JAPAN</option>
+                                                    <option value="MD">AIR MADAGASCAR</option>
+                                                    <option value="AZ">ALITALIA</option>
+                                                    <option value="JA">B H AIRLINES</option>
+                                                    <option value="NC">NATIONAL JET SYSTEMS</option>
+                                                    <option value="AQ">9 AIR</option>
+                                                    <option value="9B">ACCESRAIL</option>
+                                                    <option value="6U">ACG AIR CARGO</option>
+                                                    <option value="JP">ADRIA AIRWAYS</option>
+                                                    <option value="A3">AEGEAN AIRLINES</option>
+                                                    <option value="EI">AER LINGUS</option>
+                                                    <option value="NG">AERO CONTRACTORS</option>
+                                                    <option value="P5">AERO REPUBLICA</option>
+                                                    <option value="WV">AERO VIP COMPANHIA TRANSPORTES</option>
+                                                    <option value="H4">AERO4M</option>
+                                                    <option value="7L">AEROCARIBBEAN</option>
+                                                    <option value="A4">AEROCOMERCIAL ORIENTE NORTE</option>
+                                                    <option value="VB">AEROENLACES NACIONALES</option>
+                                                    <option value="SU">AEROFLOT</option>
+                                                    <option value="5P">AEROLINEA PRINCIPAL CHILE</option>
+                                                    <option value="AR">AEROLINEAS ARGENTINAS</option>
+                                                    <option value="2K">AEROLINEAS GALAPAGOS</option>
+                                                    <option value="P4">AEROLINEAS SOSA</option>
+                                                    <option value="A8">AEROLINK UGANDA LIMITED</option>
+                                                    <option value="5D">AEROLITORAL</option>
+                                                    <option value="AM">AEROMEXICO</option>
+                                                    <option value="VH">AEROPOSTAL</option>
+                                                    <option value="HN">AFGHAN JET INTERNATIONAL</option>
+                                                    <option value="FK">AFRICA WEST CARGO  GHD</option>
+                                                    <option value="AW">AFRICA WORLD AIRLINES</option>
+                                                    <option value="8U">AFRIQIYAH AIRWAYS</option>
+                                                    <option value="AH">AIR ALGERIE</option>
+                                                    <option value="G9">AIR ARABIA</option>
+                                                    <option value="E5">AIR ARABIA EGYPT</option>
+                                                    <option value="9P">AIR ARABIA JORDAN</option>
+                                                    <option value="QN">AIR ARMENIA</option>
+                                                    <option value="UU">AIR AUSTRAL</option>
+                                                    <option value="W9">AIR BAGAN</option>
+                                                    <option value="BT">AIR BALTIC</option>
+                                                    <option value="AB">AIR BERLIN</option>
+                                                </select>
+                                            </div>
+                                            <div class="adult-box">
+
+                                                <select>
+                                                    <option value="All">Economy</option>
+                                                    <option value="VW">Business</option>
+                                                    <option value="3H">First</option>
+
+
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-12">
+                                            <input type="submit" class="srch" value="Search Flights" />
+                                        </div>
+                                    </form>
+                                </div>
+                                <div id="2" class="tab1">
+                                    <form>
+                                        <div class="triptype">
+                                            <label><input type="radio" name="Round" value="RoundTrip" checked> Round Trip</label>
+                                            <label><input type="radio" name="Round" value="OneWay"> OneWay				</label>
+                                        </div>
+                                        <div class="col-sm-12 col-xs-12 ctrl">
+                                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                            <input id="airport_city" type="text" class="form-control" name="airport_city" value="" placeholder="Enter a city or Airport">
+                                        </div>
+                                        <div class="col-sm-12 col-xs-12 ctrl">
+                                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                            <input id="airport_city_to" type="text" class="form-control" name="airport_city" value="" placeholder="Enter a city or Airport">
+                                        </div>
+                                        <div class="col-sm-6 col-xs-6 ctrl">
+                                            <i class="fa fa-calendar" aria-hidden="true"></i>
+                                            <input id="depart" type="text" class="form-control" name="depart" value="" placeholder="dd-mm-yyyy">
+                                        </div>
+                                        <div class="col-sm-6 col-xs-6 ctrl">
+                                            <i class="fa fa-calendar" aria-hidden="true"></i>
+                                            <input id="airport_city_Return" type="text" class="form-control" name="Return" value="" placeholder="dd-mm-yyyy">
+                                        </div>
+                                        <div class="select-wrap">
+                                            <div class="adult-box">
+                                                <span>Adult</span>
+                                                <select>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                </select>
+                                            </div>
+                                            <div class="adult-box">
+                                                <span>Seniors</span>
+                                                <select>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>2</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                </select>
+                                            </div>
+                                            <div class="adult-box">
+                                                <span>Children</span>
+                                                <select>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>2</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                </select>
+                                            </div>
+                                            <div class="adult-box pull-right">
+                                                <span>Class</span>
+                                                <select>
+                                                    <option>Coach</option>
+                                                    <option>Business</option>
+                                                    <option>Economy</option>
+                                                    <option>General</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="select-wrap prefered-airline">
+                                            <div class="adult-box">
+
+                                                <select>
+                                                    <option value="All">Airlines</option>
+                                                    <option value="VW">AEROMAR</option>
+                                                    <option value="3H">AIR INUIT</option>
+                                                    <option value="NQ">AIR JAPAN</option>
+                                                    <option value="MD">AIR MADAGASCAR</option>
+                                                    <option value="AZ">ALITALIA</option>
+                                                    <option value="JA">B H AIRLINES</option>
+                                                    <option value="NC">NATIONAL JET SYSTEMS</option>
+                                                    <option value="AQ">9 AIR</option>
+                                                    <option value="9B">ACCESRAIL</option>
+                                                    <option value="6U">ACG AIR CARGO</option>
+                                                    <option value="JP">ADRIA AIRWAYS</option>
+                                                    <option value="A3">AEGEAN AIRLINES</option>
+                                                    <option value="EI">AER LINGUS</option>
+                                                    <option value="NG">AERO CONTRACTORS</option>
+                                                    <option value="P5">AERO REPUBLICA</option>
+                                                    <option value="WV">AERO VIP COMPANHIA TRANSPORTES</option>
+                                                    <option value="H4">AERO4M</option>
+                                                    <option value="7L">AEROCARIBBEAN</option>
+                                                    <option value="A4">AEROCOMERCIAL ORIENTE NORTE</option>
+                                                    <option value="VB">AEROENLACES NACIONALES</option>
+                                                    <option value="SU">AEROFLOT</option>
+                                                    <option value="5P">AEROLINEA PRINCIPAL CHILE</option>
+                                                    <option value="AR">AEROLINEAS ARGENTINAS</option>
+                                                    <option value="2K">AEROLINEAS GALAPAGOS</option>
+                                                    <option value="P4">AEROLINEAS SOSA</option>
+                                                    <option value="A8">AEROLINK UGANDA LIMITED</option>
+                                                    <option value="5D">AEROLITORAL</option>
+                                                    <option value="AM">AEROMEXICO</option>
+                                                    <option value="VH">AEROPOSTAL</option>
+                                                    <option value="HN">AFGHAN JET INTERNATIONAL</option>
+                                                    <option value="FK">AFRICA WEST CARGO  GHD</option>
+                                                    <option value="AW">AFRICA WORLD AIRLINES</option>
+                                                    <option value="8U">AFRIQIYAH AIRWAYS</option>
+                                                    <option value="AH">AIR ALGERIE</option>
+                                                    <option value="G9">AIR ARABIA</option>
+                                                    <option value="E5">AIR ARABIA EGYPT</option>
+                                                    <option value="9P">AIR ARABIA JORDAN</option>
+                                                    <option value="QN">AIR ARMENIA</option>
+                                                    <option value="UU">AIR AUSTRAL</option>
+                                                    <option value="W9">AIR BAGAN</option>
+                                                    <option value="BT">AIR BALTIC</option>
+                                                    <option value="AB">AIR BERLIN</option>
+                                                </select>
+                                            </div>
+                                            <div class="adult-box">
+
+                                                <select>
+                                                    <option value="All">Economy</option>
+                                                    <option value="VW">Business</option>
+                                                    <option value="3H">First</option>
+
+
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-12">
+                                            <input type="submit" class="srch" value="Search" />
+                                        </div>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+    </center>
+
+
+
+{% endblock %}
