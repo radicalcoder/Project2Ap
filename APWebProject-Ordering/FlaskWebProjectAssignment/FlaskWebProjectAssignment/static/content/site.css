@@ -50,13 +50,17 @@ html {
 }
 
 #section1 {
+    position:relative;
     height: 500px;
-    background-color: black;
+    
 }
 
 #section2 {
+    position: relative;
+    left: 350px;
+    top: 250px;
     height: 500px;
-    background-color: white;
+    
 }
 
 #section3 {
@@ -495,13 +499,15 @@ a:hover {
 }
 
 .slideshow-container {
-    max-width: 1000px;
+    left: 120px;
+    max-width: 1080px;
     position: relative;
     margin:auto;
     
 }
 
 .mySlides {
+    
     display: none;
 }
 
