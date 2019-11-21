@@ -11,11 +11,10 @@ from flask_login import LoginManager
 
 
 app = Flask(__name__)
-ord = Flask(__name__)
 app.config.from_object(Config)
-ord.config.from_object(Configorder)
+
 db = SQLAlchemy(app)
-dborder = SQLAlchemy(ord)
+
 #migrate = Migrate(app, db)
 login = LoginManager(app)
 
@@ -28,11 +27,12 @@ def create_tables():
     #db.drop_all()    
     db.create_all() 
     admin = User(username='susan', email='susan@example.com')
-    p = Order(id = '1')
-    db.session.add(admin)
-    db.session.add(p)
-    db.session.commit
-   
+    users = User.query\
+			.join(Order)\
+			.join(Order.test1)\
+            .filter(User.id==1).all()
+
+
 
 from FlaskWebProjectAssignment import views, models
 
