@@ -8,7 +8,7 @@ from flask_login import login_user, logout_user, current_user, login_required
 from werkzeug.urls import url_parse
 from FlaskWebProjectAssignment import app, db
 from FlaskWebProjectAssignment.forms import LoginForm, RegistrationForm, OrderForm, EditAddress
-from FlaskWebProjectAssignment.models import User
+from FlaskWebProjectAssignment.models import User,Order
 
 
 
@@ -101,14 +101,25 @@ def user(username):
     return render_template('user.html', title = 'Profile' , form = form, user=user)
 
 @app.route('/test')
-def test():
+def test():    
+    u = User(id= '1',username="Coroline", email="sadboi@gmail.com")
+    o = Order(customer = u)
+    orders = Order.query.all()
+    
+    db.session.add(u)
+    db.session.add(o)
+    db.session.commit()
+    for ord in orders:
+        print(orders.id,orders.customer.id)
+
+
     return render_template(
     'layout.html',
     title = 'test',
     year = datetime.now().year,
-    message='TestPage'
-           
+    message='TestPage'           
            )
+
 @app.route('/contact')
 def contact():
     """Renders the contact page."""

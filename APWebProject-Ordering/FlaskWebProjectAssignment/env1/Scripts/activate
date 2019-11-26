@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\Yash\Desktop\APWebProject-Ordering\APWebProject-Ordering\FlaskWebProjectAssignment\env1"
+VIRTUAL_ENV="C:\dev\Test\Project2Ap\APWebProject-Ordering\FlaskWebProjectAssignment\env1"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

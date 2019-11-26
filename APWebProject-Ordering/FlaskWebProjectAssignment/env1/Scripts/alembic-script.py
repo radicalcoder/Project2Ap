@@ -1,4 +1,4 @@
-#!C:\Users\Yash\Desktop\APWebProject-Ordering\APWebProject-Ordering\FlaskWebProjectAssignment\env1\Scripts\python.exe
+#!C:\dev\Test\Project2Ap\APWebProject-Ordering\FlaskWebProjectAssignment\env1\Scripts\python.exe
 # EASY-INSTALL-ENTRY-SCRIPT: 'alembic==1.2.1','console_scripts','alembic'
 __requires__ = 'alembic==1.2.1'
 import re

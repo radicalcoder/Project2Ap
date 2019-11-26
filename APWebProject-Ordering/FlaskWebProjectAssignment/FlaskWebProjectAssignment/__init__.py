@@ -22,16 +22,14 @@ login = LoginManager(app)
 @app.before_first_request
 def create_tables():
 
-    from FlaskWebProjectAssignment.models import User, Order
-    #Test code to delete old db   
-    #db.drop_all()    
-    db.create_all() 
-    admin = User(username='susan', email='susan@example.com')
-    users = User.query\
-			.join(Order)\
-			.join(Order.test1)\
-            .filter(User.id==1).all()
+    from FlaskWebProjectAssignment.models import User, Order    
+    
+    #Table Creation
+    db.create_all()
+    
 
+    
+    
 
 
 from FlaskWebProjectAssignment import views, models
