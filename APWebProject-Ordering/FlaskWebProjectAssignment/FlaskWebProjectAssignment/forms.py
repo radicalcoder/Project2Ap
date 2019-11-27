@@ -29,15 +29,12 @@ class RegistrationForm(FlaskForm):
         if user is not None:
             raise ValidationError('Please use a different email address.')
 
-class OrderForm(FlaskForm):
-     base = SelectField('Base',choices= [('sp', 'Sponge'), ('cck','Cheesecake'), ('3t','3-Tier')])
-     flavour = SelectField('Flavour',choices= [('V', 'Vanilla'), ('c','chocolate'), ('st','Strawberry'), ('o', 'Oreo')])
+class FlightForm(FlaskForm):
+     start_Location = SelectField('Start Location',choices= [('DEL', 'New Delhi'), ('BOM','Mumbai'), ('HYD','Hyderabad'), ('GOA','GOA'),('BLR','Bangalore'),])
+     end_Location = SelectField('End Location',choices= [('DEL', 'New Delhi'), ('BOM','Mumbai'), ('HYD','Hyderabad'), ('GOA','GOA'),('BLR','Bangalore'),])
      icing = SelectField('Icing',choices= [('bt', 'Buttercream'), ('fc','Fresh Cream'), ('gn','Ganache')])
      decorations = SelectField('Decorations',choices= [('flow', 'Flowers'), ('frt','Fresh Fruits'), ('cc','Crushed Candy')])
      egg = SelectField('Egg', choices =[('e','Egg'), ('eggl','Eggless')])
      
      submit = SubmitField("Order Now")
 
-class EditAddress(FlaskForm):       
-       address = TextAreaField('Enter Address', validators=[Length(min=0, max=140)])
-       submit = SubmitField('Save Address')

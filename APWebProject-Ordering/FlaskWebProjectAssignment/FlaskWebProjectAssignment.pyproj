@@ -17,7 +17,7 @@
     <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
     <Name>FlaskWebProjectAssignment</Name>
     <RootNamespace>FlaskWebProjectAssignment</RootNamespace>
-    <InterpreterId>MSBuild|env1|$(MSBuildProjectFullPath)</InterpreterId>
+    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -38,9 +38,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="FlaskWebProjectAssignment\models.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="FlaskWebProjectAssignment\module1.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="runserver.py" />
