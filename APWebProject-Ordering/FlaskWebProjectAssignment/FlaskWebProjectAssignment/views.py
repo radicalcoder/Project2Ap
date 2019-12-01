@@ -7,7 +7,7 @@ from flask import render_template, flash, redirect, url_for, request
 from flask_login import login_user, logout_user, current_user, login_required
 from werkzeug.urls import url_parse
 from FlaskWebProjectAssignment import app, db
-from FlaskWebProjectAssignment.forms import LoginForm, RegistrationForm, OrderForm, EditAddress
+from FlaskWebProjectAssignment.forms import LoginForm, RegistrationForm, FlightForm, HotelForm
 from FlaskWebProjectAssignment.models import User,Order
 
 
@@ -36,10 +36,10 @@ def order():
         flash ('Login To Begin Your Travel Planning')
         return redirect(url_for('home'))
     
-    form= OrderForm()
+    form= FlightForm()
     if form.validate_on_submit():
-        cake= Cake (base=form.base.data, flavour=form.flavour.data, icing=form.icing.data,decorations=form.decorations.data, egg= form.egg.data )
-        db.session.add(cake)
+        flight= Flight (start_location=form.start_location.data, end_location=form.end_location.data, passenger=form.passenger.data, Class=form.Class.data, Trip= form.Trip.data, start_date= form.start_date.data, end_date= form.end_date.data )
+        db.session.add(flight)
         db.session.commit()
     return render_template(
         'order.html',
@@ -47,6 +47,14 @@ def order():
         form = form,
         year=datetime.now().year
         )
+
+    return render_template(
+        'order.html',
+        title= "Order Page",
+        form = form,
+        year=datetime.now().year
+        )
+
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -102,7 +110,7 @@ def user(username):
 
 @app.route('/test')
 def test():    
-    u = User(id= '1',username="Coroline", email="sadboi@gmail.com")
+    u = User(id= '1',username="Coroline", email="fuckboi@gmail.com")
     o = Order(customer = u)
     orders = Order.query.all()
     

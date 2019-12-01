@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField, SelectField, TextAreaField
+from wtforms import StringField, PasswordField, IntegerField, BooleanField, SubmitField, SelectField, TextAreaField
 from wtforms.validators import DataRequired, Length
 from wtforms.validators import ValidationError, DataRequired, Email, EqualTo
 from FlaskWebProjectAssignment.models import User
@@ -32,9 +32,16 @@ class RegistrationForm(FlaskForm):
 class FlightForm(FlaskForm):
      start_Location = SelectField('Start Location',choices= [('DEL', 'New Delhi'), ('BOM','Mumbai'), ('HYD','Hyderabad'), ('GOA','GOA'),('BLR','Bangalore'),])
      end_Location = SelectField('End Location',choices= [('DEL', 'New Delhi'), ('BOM','Mumbai'), ('HYD','Hyderabad'), ('GOA','GOA'),('BLR','Bangalore'),])
-     icing = SelectField('Icing',choices= [('bt', 'Buttercream'), ('fc','Fresh Cream'), ('gn','Ganache')])
-     decorations = SelectField('Decorations',choices= [('flow', 'Flowers'), ('frt','Fresh Fruits'), ('cc','Crushed Candy')])
-     egg = SelectField('Egg', choices =[('e','Egg'), ('eggl','Eggless')])
-     
-     submit = SubmitField("Order Now")
+     passenger = SelectField('Passenger',choices= [('Adult', 'Adult'), ('Children', 'Children')])
+     Class = SelectField('Class',choices= [('Business', 'Business'), ('Economy', 'Economy')])
+     Trip = SelectField('Trip',choices= [('One way', 'One way'), ('Round Trip', 'Round Trip')])
+     start_date = IntegerField('Start Date', validators=[DataRequired()])
+     end_date = IntegerField('End Date', validators=[DataRequired()])
+     submit = SubmitField("Book flight now")
 
+class HotelForm(FlaskForm):
+     city = SelectField('Location',choices= [('DEL', 'New Delhi'), ('BOM','Mumbai'), ('HYD','Hyderabad'), ('GOA','GOA'),('BLR','Bangalore'),])
+     checkin_date = IntegerField('Check in Date', validators=[DataRequired()])
+     checkout_date = IntegerField('Check out Date', validators=[DataRequired()])
+     rooms = SelectField('Rooms',choices= [('1 Room 2 Adults', 'One Room'), ('2 Rooms 4 Adults', 'Two Rooms')])
+     submit = SubmitField("Book hotel now")
