@@ -499,11 +499,11 @@ a:hover {
 }
 
 .slideshow-container {
-    left: 120px;
-    max-width: 1080px;
-    position: relative;
-    margin:auto;
-    
+    max-width: 1510px;
+    width: 200%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
 .mySlides {
