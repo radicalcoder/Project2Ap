@@ -1,18 +1,19 @@
 # APWebProject
-AP Project
-AP Project
+AP Project2 
+AP Project2
 
-Project Title - Bake Me Away
+Project Title - TravelPedia
 
-Description This project’s main aim is to develop an easy to use web-store that assists in ordering different variety of Cakes online. The objective that this project tries to achieve is to make an easy to use, interactive, one stop shop for all your cake related requirements. To facilitate choices and make ordering easy, we follow a user interactive interface where a user has hundred percent control over the choices he wants to make about their product. This is achieved by providing the user with a wide range of options from which they can handcraft their own final product.
+Description :
 
-What makes your project stand out? The idea finds its origin in one of the developers own interest in baking which led to the development of this online store. This makes it very personalized and we have tried to give it a touch of our own.
+This project's main aim is help with easy online booking of flights and hotel reservation. The site allows an dummy model to book flight systems and book a hotel room for a number of guests over a certain period of time. 
+
 
 Built With Flask - The web framework used Flask - Dependency Management SqlAlchemy - Database Management
 
 How to Run: The code functions seamlessly when used with flask. Follow these steps to run the website. You will need Visual Studio With Python to run the website seamlessly.
 
-1.Clone the "Ordering" branch from the github repository named APWebProject
+1.Clone the "DB" branch from the github repository named Project2Ap
 2.Run Visual Studio
 3.Open the Flask Solution from the cloned "Ordering" repository
 4.Click on "Web Server" in Visual Studio
