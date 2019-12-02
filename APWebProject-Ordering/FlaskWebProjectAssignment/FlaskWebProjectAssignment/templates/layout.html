@@ -17,58 +17,63 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 
-<body>
+<body style="background: rgb(0, 255, 255)">
 
-    
-        <div class="navbar-collapse collapse">
-      
-            <center>
+    <div id="header" class="navbar navbar-inverse navbar-expand-sm navbar-fixed-top" style="background: rgba(131, 4, 138,0.8)">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand" style=" color: violet">TravelPedia</a>
+            
 
-                <ul class="nav navbar-nav">
-                    <li><a href="{{ url_for('home') }}" style=" color: violet">Home</a></li>
-                    <li><a href="{{ url_for('about') }}" style=" color: violet">About</a></li>
-                    {% if current_user.is_anonymous %}
-                    <li><a href="{{ url_for('login') }}" style=" color: violet">Login</a></li>
-                    {% else %}
-                    <li><a href="{{ url_for('user', username=current_user.username) }}" style="color sandybrown">Profile</a></li>
-                    <li><a href="{{ url_for('logout') }}" style=" color: violet">Logout</a></li>
-                    {% endif %}
 
-                    <li><a href="{{ url_for('contact') }}" style=" color: violet">Contact</a></li>
-                </ul>
-            </center>
+            <ul class="nav navbar-nav">
+                <li><a href="{{ url_for('home') }}" style=" color: violet">Home</a></li>
+                <li><a href="{{ url_for('about') }}" style=" color: violet">About</a></li>
+                {% if current_user.is_anonymous %}
+                <li><a href="{{ url_for('login') }}" style=" color: violet">Login</a></li>
+                {% else %}
+                <li><a href="{{ url_for('user', username=current_user.username) }}" style="color sandybrown">Profile</a></li>
+                <li><a href="{{ url_for('logout') }}" style=" color: violet">Logout</a></li>
+                {% endif %}
+
+                <li><a href="{{ url_for('contact') }}" style=" color: violet">Contact</a></li>
+
+                </div>
+            </div>
         </div>
+    <hr />
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
 
-        
-    
-   
+                <center>
 
-        <hr>
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        <center>
-            <ul>
-                {% for message in messages %}
-                <center><li>{{ message }}</li></center>
-                {% endfor %}
-            </ul>
-        </center>
-        {% endif %}
-        {% endwith %}
-        {% block content %}{% endblock %}
-        <div class="container body-content">
+                    {% for message in messages %}
+                    <div class="alert alert-info" role="alert">
+                        <center><li>{{ message }}</li></center>
+                    </div>
+                    {% endfor %}
 
-            <hr>
+                </center>
 
-            <footer>
-                <p>&copy; {{ year }} - TravelPedia</p>
-            </footer>
-        </div>
+                {% endif %}
+                {% endwith %}
+                {% block content %}{% endblock %}
+                <div class="container body-content">
+                    <hr>
+                    <footer>
+                        <p>&copy; {{ year }} - TravelPedia</p>
+                    </footer>
+                </div>
 
-        <script src="/static/scripts/jquery-1.10.2.js"></script>
-        <script src="/static/scripts/bootstrap.js"></script>
-        <script src="/static/scripts/respond.js"></script>
-        {% block scripts %}{% endblock %}
+                <script src="/static/scripts/jquery-1.10.2.js"></script>
+                <script src="/static/scripts/bootstrap.js"></script>
+                <script src="/static/scripts/respond.js"></script>
+                {% block scripts %}{% endblock %}
+
 
 </body>
-</html>

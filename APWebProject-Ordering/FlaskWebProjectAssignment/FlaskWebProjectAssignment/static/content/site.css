@@ -222,9 +222,9 @@ input[type="checkbox"].input-validation-error {
 }
 .navbar {
     position: absolute;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-size: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 15px;
 }
 #header {
     transition: 0.5s;
@@ -241,11 +241,14 @@ input[type="checkbox"].input-validation-error {
     min-height: 50%;
 }
 
+.centre{
+    text-align: centre
+}
 body {
     background: url(../images/body-bg.jpg) no-repeat center center;
     font-family: 'Roboto', sans-serif;
     height: 100%;
-    position: relativ
+    position: relative
 }
 
 *:focus {
