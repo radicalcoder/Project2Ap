@@ -17,7 +17,16 @@ from FlaskWebProjectAssignment.models import User,Order
 @app.route('/index')
 def home():
     """Renders the home page."""
-    
+    form = FlightForm()
+    if form.validate_on_submit():
+        flight= Flight( startLoc=form.startLocation.data, 
+                        endLoc=form.endLocation.data, 
+                        passengerNo=form.passenger.data,
+                        tripDirection=form.trip.data,
+                        start= form.startDate.data,
+                        end= form.endDate.data)
+        db.session.add(flight)
+        db.session.commit()
     return render_template(
         'index.html',
         title='Index Page',
@@ -31,16 +40,12 @@ def home():
 def order():
     
     if current_user.is_authenticated:
-        flash('Happy Travelling!')
+        flash()
     else:
         flash ('Login To Begin Your Travel Planning')
         return redirect(url_for('home'))
     
-    form= FlightForm()
-    if form.validate_on_submit():
-        cake= Cake (base=form.base.data, flavour=form.flavour.data, icing=form.icing.data,decorations=form.decorations.data, egg= form.egg.data )
-        db.session.add(cake)
-        db.session.commit()
+    
     return render_template(
         'order.html',
         title= "Order Page",
@@ -116,9 +121,7 @@ def test():
     
     db.session.add(u)
     db.session.add(o)
-    db.session.commit()
-    for ord in orders:
-        print(orders.id,orders.customer.id)
+    db.session.commit()   
 
 
     return render_template(

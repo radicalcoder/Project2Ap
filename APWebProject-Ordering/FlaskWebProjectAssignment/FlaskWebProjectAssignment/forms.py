@@ -30,13 +30,13 @@ class RegistrationForm(FlaskForm):
             raise ValidationError('Please use a different email address.')
 
 class FlightForm(FlaskForm):
-     start_Location = SelectField('Start Location',choices= [('DEL', 'New Delhi'), ('BOM','Mumbai'), ('HYD','Hyderabad'), ('GOA','GOA'),('BLR','Bangalore'),])
-     end_Location = SelectField('End Location',choices= [('DEL', 'New Delhi'), ('BOM','Mumbai'), ('HYD','Hyderabad'), ('GOA','GOA'),('BLR','Bangalore'),])
+     startLocation = SelectField('Start Location',choices= [('DEL', 'New Delhi'), ('BOM','Mumbai'), ('HYD','Hyderabad'), ('GOA','GOA'),('BLR','Bangalore'),])
+     endLocation = SelectField('End Location',choices= [('DEL', 'New Delhi'), ('BOM','Mumbai'), ('HYD','Hyderabad'), ('GOA','GOA'),('BLR','Bangalore'),])
      passenger = SelectField('Passenger',choices= [('Adult', 'Adult'), ('Children', 'Children')])
-     Class = SelectField('Class',choices= [('Business', 'Business'), ('Economy', 'Economy')])
-     Trip = SelectField('Trip',choices= [('One way', 'One way'), ('Round Trip', 'Round Trip')])
-     start_date = IntegerField('Start Date', validators=[DataRequired()])
-     end_date = IntegerField('End Date', validators=[DataRequired()])
+     flightClass = SelectField('Class',choices= [('Business', 'Business'), ('Economy', 'Economy')])
+     trip = SelectField('Trip',choices= [('One way', 'One way'), ('Round Trip', 'Round Trip')])
+     startDate = IntegerField('Start Date', validators=[DataRequired()])
+     endDate = IntegerField('End Date', validators=[DataRequired()])
      submit = SubmitField("Book flight now")
 
 class HotelForm(FlaskForm):
